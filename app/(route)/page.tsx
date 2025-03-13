@@ -1,6 +1,8 @@
 import Start from "../_components/Start";
 import AboutMe from "../_components/AboutMe";
 import Skills from "../_components/Skills";
+import Career from "../_components/Career";
+import Project from "../_components/Project";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Start />
       <AboutMe />
       <Skills />
+      <Career />
+      <Project />
     </div>
   );
 }
