@@ -3,7 +3,7 @@ import Title from "./Title";
 
 const AboutMe = () => {
   return (
-    <section>
+    <section className="flex flex-col items-center">
       <Title>About Me</Title>
       <div>
         <div></div>
