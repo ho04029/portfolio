@@ -1,11 +1,11 @@
 import React from "react";
-import Title from "./Title";
+import Common from "./Common";
 
 const Career = () => {
   return (
-    <section>
-      <Title>Career</Title>
-    </section>
+    <Common.section>
+      <Common.title>Career</Common.title>
+    </Common.section>
   );
 };
 

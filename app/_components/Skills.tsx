@@ -1,10 +1,10 @@
 import React from "react";
-import Title from "./Title";
+import Common from "./Common";
 
 const Skills = () => {
   return (
-    <section>
-      <Title>Skills</Title>
+    <Common.section>
+      <Common.title>Skills</Common.title>
       <section>
         <h3>FrontEnd</h3>
       </section>
@@ -14,7 +14,7 @@ const Skills = () => {
       <section>
         <h3>Etc</h3>
       </section>
-    </section>
+    </Common.section>
   );
 };
 
