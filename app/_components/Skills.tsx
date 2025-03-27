@@ -51,6 +51,13 @@ const Skills = () => {
             <li>
               <Image src={"/nodejs.png"} alt="nodejs" height={50} width={50} />
             </li>
+
+            <li>
+              <Image src={"/java.png"} alt="java" height={50} width={50} />
+            </li>
+            <li>
+              <Image src={"/MySQL.png"} alt="MySQL" height={50} width={50} />
+            </li>
           </ul>
         </div>
       </section>
