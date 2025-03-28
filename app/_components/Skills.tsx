@@ -2,69 +2,75 @@ import React from "react";
 import Image from "next/image";
 import Common from "./Common";
 
+interface Skill {
+  src: string;
+  alt: string;
+}
+
+interface SkillData {
+  FrontEnd: Skill[];
+  BackEnd: Skill[];
+  Etc: Skill[];
+}
+
+const skillData: SkillData = {
+  FrontEnd: [
+    { src: "/javaScript.png", alt: "javascript" },
+    { src: "/typescript.png", alt: "typescript" },
+    { src: "/react.png", alt: "react" },
+    { src: "/nextjs.png", alt: "nextjs" },
+    { src: "/redux.png", alt: "redux" },
+    { src: "/recoil.png", alt: "recoil" },
+    { src: "/reactQuery.png", alt: "React Query" },
+    { src: "/zustand.png", alt: "zustand" },
+    { src: "/html.png", alt: "html" },
+    { src: "/css.png", alt: "css" },
+  ],
+  BackEnd: [
+    { src: "/nodejs.png", alt: "nodejs" },
+    { src: "/java.png", alt: "java" },
+    { src: "/MySQL.png", alt: "MySQL" },
+  ],
+  Etc: [
+    { src: "/github.png", alt: "github" },
+    { src: "/gitlab.png", alt: "gitlab" },
+    { src: "/figma.png", alt: "figma" },
+    { src: "/notion.png", alt: "notion" },
+    { src: "/slack.png", alt: "slack" },
+  ],
+};
+
+const SkillUl: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <ul className="flex">{children}</ul>
+);
+
+const SkillImgLi: React.FC<Skill> = ({ src, alt }) => (
+  <li>
+    <Image src={src} alt={alt} height={50} width={50} />
+  </li>
+);
+
+const SkillSection: React.FC<{ title: string; skills: Skill[] }> = ({
+  title,
+  skills,
+}) => (
+  <section>
+    <h3>{title}</h3>
+    <SkillUl>
+      {skills.map((skill) => (
+        <SkillImgLi key={skill.alt} {...skill} />
+      ))}
+    </SkillUl>
+  </section>
+);
+
 const Skills = () => {
   return (
     <Common.section>
       <Common.title>Skills</Common.title>
-      <section>
-        <h3>FrontEnd</h3>
-        <div>
-          <ul>
-            <li>
-              <Image src={"/html.png"} alt="html" height={50} width={50} />
-            </li>
-            <li>
-              <Image src={"/css.png"} alt="css" height={50} width={50} />
-            </li>
-            <li>
-              <Image
-                src={"/javaScript.png"}
-                alt="javascript"
-                height={50}
-                width={50}
-              />
-            </li>
-            <li>
-              <Image src={"/react.png"} alt="react" height={50} width={50} />
-            </li>
-            <li>
-              <Image src={"/nextjs.png"} alt="nextjs" height={50} width={50} />
-            </li>
-            <li>
-              <Image src={"/redux.png"} alt="redux" height={50} width={50} />
-            </li>
-            <li>
-              <Image
-                src={"/zustand.png"}
-                alt="zustand"
-                height={50}
-                width={50}
-              />
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <h3>BackEnd</h3>
-        <div>
-          <ul>
-            <li>
-              <Image src={"/nodejs.png"} alt="nodejs" height={50} width={50} />
-            </li>
-
-            <li>
-              <Image src={"/java.png"} alt="java" height={50} width={50} />
-            </li>
-            <li>
-              <Image src={"/MySQL.png"} alt="MySQL" height={50} width={50} />
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <h3>Etc</h3>
-        <div></div>
-      </section>
+      {Object.entries(skillData).map(([category, skills]) => (
+        <SkillSection key={category} title={category} skills={skills} />
+      ))}
     </Common.section>
   );
 };
