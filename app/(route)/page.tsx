@@ -6,7 +6,7 @@ import Project from "../_components/Project";
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center bg-[#e7e3df]">
+    <div className="items-center justify-items-center bg-[#e7e3df] font-[Pretendard-Regular]">
       <Start />
       <AboutMe />
       <Skills />

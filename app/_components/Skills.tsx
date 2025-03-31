@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Common from "./Common";
 
+//타입 정의
 interface Skill {
   src: string;
   alt: string;
@@ -13,6 +14,7 @@ interface SkillData {
   Etc: Skill[];
 }
 
+//데이터
 const skillData: SkillData = {
   FrontEnd: [
     { src: "/javaScript.png", alt: "javascript" },
@@ -40,6 +42,7 @@ const skillData: SkillData = {
   ],
 };
 
+//컴포넌트
 const SkillUl: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <ul className="flex">{children}</ul>
 );
@@ -64,6 +67,7 @@ const SkillSection: React.FC<{ title: string; skills: Skill[] }> = ({
   </section>
 );
 
+//Skills 메인 컴포넌트
 const Skills = () => {
   return (
     <Common.section>
